@@ -1,0 +1,62 @@
+{
+  "name": "bosta-assessment",
+  "version": "1.0.0",
+  "description": "uptime monitoring RESTful API server which allows authorized users to enter URLs they want monitored, and get detailed uptime reports about their availability, average response time, and total uptime/downtime.",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": " set NODE_ENV=development&& nodemon",
+    "start:prod": " set NODE_ENV=production&& node src/server.js",
+    "start": "npm run start:prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedAliAbdAlMowla/bosta-assessment.git"
+  },
+  "keywords": [
+    "bosta",
+    "uptime",
+    "monitor",
+    "RESTful",
+    "API",
+    "node.js",
+    "express",
+    "mongoDB",
+    "agenda",
+    "JWT",
+    "webhook"
+  ],
+  "author": "Ahmed Ali Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AhmedAliAbdAlMowla/bosta-assessment/issues"
+  },
+  "homepage": "https://github.com/AhmedAliAbdAlMowla/bosta-assessment#readme",
+  "dependencies": {
+    "agenda": "^4.2.1",
+    "axios": "^0.21.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.8",
+    "morgan": "^1.10.0",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "js",
+    "exec": "node ./src/server.js"
+  },
+  "engines": {
+    "node": "14.15.4",
+    "npm": "6.14.10"
+  }
+}

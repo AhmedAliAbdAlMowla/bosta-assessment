@@ -1,0 +1,62 @@
+{
+    "openapi": "3.0.0",
+    "servers": [
+      {
+        "url": "http://localhost:5000/api/v1/",
+        "description": "Devlopment server (uses test data)",
+        "variables": {}
+      },
+      {
+        "url": "http://00.000.000.000/api/v1/",
+        "description": "Production server (uses live data)",
+        "variables": {},
+        "basePath": ""
+      }
+    ],
+    "info": {
+      "version": "v1",
+      "title": "BOSTA ASSESSMENT API",
+      "description": "This api was developed  by eng : Ahmed Ali Ahmed Abd Al Mowla ✌️✌️ ,for BOST company, @copyright BOSTA 2021",
+      "termsOfService": "",
+      "contact": {},
+      "license": { "name": "" }
+    },
+  
+    "tags": [
+      {
+        "name": "User",
+        "description": "Everything about  User"
+      }
+    ],
+    "paths": {},
+
+    "components": {
+        "parameters": {
+          "x-auth-token": {
+            "name": "x-auth-token",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+         
+         
+        },
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "x-auth-token",
+            "scheme": "bearer",
+            "description": "Enter JWT token",
+            "in": "header"
+          }
+        }
+      },
+      "security": [{ "ApiKeyAuth": [] }],
+
+      "externalDocs": { "url": "", "description": "" },
+      "warnings": []
+
+}
