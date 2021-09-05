@@ -5,11 +5,15 @@
 ###  API is live http://15.185.219.194/api/
 ### Swagger API documentation live http://15.185.219.194/api/api-docs/
 
+Swagger_notes:in live mode change server to production
+
+![Swagger_notes:in live mode change server to production](./Swagger_notes.png) 
+
  ### ` npm run start:dev`
-Runs the app in the development mode.
+Run the app in the development mode.
 
  ### ` npm run start:prod`
-Runs the app in the production mode. 
+Run the app in the production mode. 
 
 <pre>
                                                            environment variables    
