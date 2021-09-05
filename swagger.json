@@ -26,9 +26,90 @@
       {
         "name": "User",
         "description": "Everything about  User"
+      },
+      {
+        "name": "Check",
+        "description": "Everything about  Check"
       }
     ],
-    "paths": {},
+    "paths": {
+      "/user/login": {
+        "post": {
+          "summary": " Login",
+          "operationId": "login",
+          "description": "you can use this end point to  login",
+          "parameters": [],
+          "responses": { "200": { "description": "", "headers": {} } },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "email": "ahmedabdalmola2017@gmail.com",
+                    "password": "#Ahmed123"
+                  }
+                },
+                "example": "{\r\n    \"email\":\"ahmedabdalmola2017@gmail.com\",\r\n    \"password\": \"#Ahmed123\"\r\n}"
+              }
+            }
+          },
+          "tags": ["User"]
+        }
+      },
+      "/user/signup": {
+        "post": {
+          "summary": "Signup",
+          "operationId": "signup",
+          "description": "you can use this end point to  signup",
+          "parameters": [],
+          "responses": { "200": { "description": "", "headers": {} } },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "firstName": "ahmed",
+                    "lastName": "ali",
+                    "email": "ahmedshekh@student.aast.edu",
+                    "phoneNumber": "+1235665689566",
+                    "password": "#Secret123"
+                  }
+                },
+                "example": "{\r\n\r\n    \"firstName\":\"ahmed\",\r\n    \"lastName\":\"ali\",\r\n    \"email\":\"ahmedshekh@student.aast.edu\",\r\n     \"phoneNumber\":\"01096159695\",\r\n    \"password\":\"#Secret123\"\r\n\r\n}"
+              }
+            }
+          },
+          "tags": ["User"]
+        }
+      },
+      "/user/resend/confirmation/email": {
+        "post": {
+          "summary": "Resend confirmation email.",
+          "description": "you can use this end point to resend confirmation email.",
+          "operationId": "Resend confirmation email",
+          "responses": { "200": { "description": "", "headers": {} } },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "email": "ahmedshekh@student.aast.edu"
+                  }
+                },
+                "example": "{\r\n    \"email\":\"ahmedshekh@student.aast.edu\"\r\n}"
+              }
+            }
+          },
+          "tags": ["User"]
+        }
+        
+      }},
 
     "components": {
         "parameters": {
