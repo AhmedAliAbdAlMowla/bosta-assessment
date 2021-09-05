@@ -1,4 +1,29 @@
+<h2 align="center">Welcome! 👋</h2>
+
 # bosta-assessment
+
+###  API is live http://15.185.219.194/api/
+### Swagger API documentation live http://15.185.219.194/api/api-docs/
+
+ ### ` npm run start:dev`
+Runs the app in the development mode.
+
+ ### ` npm run start:prod`
+Runs the app in the production mode. 
+
+<pre>
+                                                           environment variables    
+
+
+<li>DATABASE_URL=mongodb:--------</li>
+<li>SECRET=-----------</li>
+<li>JWT_PRIVIAT_KEY=-----------</li>
+<li>JWT_EMAIL_SECRET=-----------</li>
+ <li>EMAIL_USER=-----------</li>
+ <li>EMAIL_PASS=-------</li>
+ <li>EMAIL_FROM=---------</li>
+<li>confirmUrlBase=--------</li>
+</pre>
 
 ## Features
 
@@ -54,4 +79,5 @@
 - Docker.
 - [Pushover](https://pushover.net/) integration to receive alerts on mobile devices.
 
-Try your best to implement as much as you can from the given features and feel free to add more if you want to.
+ <h2 align="center">Author</h2>
+  <h5 align="center"> <a href="https://www.linkedin.com/in/ahmedaliabdalmowla/">- LinkedIn-@ahmedaliabdalmowla/ </a> </h5>
