@@ -18,20 +18,30 @@ app.use(express.urlencoded({ extended: false }));
 
 // swagger
  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // config
 require("./config/config")();
+
 require("express-async-errors"); // for error handeler async
+
 // DB Config
 require("./startup/db")();
+
 // core
 app.use(cors(corsOptions));
+
+// Agenda UP
+require("./helper/agenda").startUp();
+
 // Routes
 require("./startup/routes")(app);
 
 // error handler
 app.use(error);
+
 // not found handler
 app.use(notfound);
+
 // production
 require("./startup/prod")(app);
 

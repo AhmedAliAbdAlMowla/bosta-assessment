@@ -7,7 +7,7 @@
         "variables": {}
       },
       {
-        "url": "http://00.000.000.000/api/v1/",
+        "url": "http://15.185.219.194/api/v1/",
         "description": "Production server (uses live data)",
         "variables": {},
         "basePath": ""
@@ -47,11 +47,11 @@
                 "schema": {
                   "type": "object",
                   "example": {
-                    "email": "ahmedabdalmola2017@gmail.com",
+                    "email": "a7med3li2008@yahoo.com",
                     "password": "#Ahmed123"
                   }
                 },
-                "example": "{\r\n    \"email\":\"ahmedabdalmola2017@gmail.com\",\r\n    \"password\": \"#Ahmed123\"\r\n}"
+                "example": "{\r\n    \"email\":\"a7med3li2008@yahoo.com\",\r\n    \"password\": \"#Ahmed123\"\r\n}"
               }
             }
           },
@@ -109,7 +109,103 @@
           "tags": ["User"]
         }
         
-      }},
+      },
+    
+      "/check": {
+        "get": {
+          "summary": "Get all cheks",
+          "operationId": "you can use this end point to get all checks.",
+          "parameters": [
+          ],
+          "responses": { "200": { "description": "", "headers": {} } },
+          "tags": ["Check"]
+        },
+        "post": {
+          "summary": "Create new check",
+          "description": "you can use this end point to create new check. optional [ port, webhook, interval, timeout, threshold, authUserName, authPassword, assertStatusCode ]",
+          "operationId": "Create new check",
+          "responses": { "200": { "description": "", "headers": {} } },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "name": "npm2",
+                    "url": "google",
+                    "protocal": "HTTPS",
+                    "path": "/",
+                    "authUserName": "ahmed",
+                    "authPassword": "ahmed123",
+                    "webhook": "https://slack.com/545a5d4a5",
+                    "interval": "1",
+                    "timeout": "4000",
+                    "threshold": "3",
+                    "assertStatusCode": "200"
+                  }
+                },
+                "example": "{\r\n    \"name\":\"google\",\r\n    \"url\":\"google.com\",\r\n    \"protocal\":\"HTTPS\",\r\n    \"path\":\"/\",\r\n  \"port\":\"\",\r\n  \"authUserName\":\"ahmed\",\r\n  \"authPassword\":\"ahmed123\",\r\n    \"webhook\":\"https://slack.com/545a5d4a5\",\r\n    \"interval\":\"1\",\r\n    \"timeout\":\"4000\",\r\n    \"threshold\":\"3\",\r\n    \"assertStatusCode\":\"200\"\r\n}"
+              }
+            }
+          },
+          "tags": ["Check"]
+        }
+        
+      },
+      "/check/{checkId}": {
+        "get": {
+          "summary": "Get one check and report",
+          "description":" you can use this end point to get one chek and report. ",
+          "operationId": "Get one check and report",
+          "parameters": [
+            {
+              "name": "checkId",
+              "in": "path",
+              "required": true,
+              "style": "form",
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": { "200": { "description": "", "headers": {} } },
+          "tags": ["Check"]
+        },
+        "patch": {
+          "summary": "Update check ",
+          "description":"you can use this end point to update  check. optional [ pause, port, webhook, interval, timeout, threshold, authUserName, authPassword, assertStatusCode ]",
+          "operationId": "Update check",
+          "parameters": [
+            {
+              "name": "checkId",
+              "in": "path",
+              "required": true,
+              "style": "form",
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": { "200": { "description": "", "headers": {} } },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": { "pause": "true", "port": "5000" }
+                },
+                "example": "{\r\n\r\n    \"pause\":\"true\",\r\n    \"port\":\"5000\"\r\n   \r\n\r\n}"
+              }
+            }
+          },
+          "tags": ["Check"]
+        }
+      }
+   
+       
+      
+    
+    
+    
+    },
 
     "components": {
         "parameters": {

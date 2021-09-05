@@ -1,7 +1,6 @@
 "use strict"
 const router = require("express").Router();
 const userController = require("../controllers/user");
-// const auth = require("../middleware/auth");
 
 // Login 
 router.post("/login", userController.login);

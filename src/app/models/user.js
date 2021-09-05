@@ -25,6 +25,7 @@ userSchema.methods.generateAuthToken = function async() {
   return JWT.sign({
       _id: this._id,
       name: this.firstName + " " + this.lastName,
+      email:this.email
     },
     process.env.JWT_PRIVIAT_KEY, { expiresIn: "3h" } // 3 hours
   );
